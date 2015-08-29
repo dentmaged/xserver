@@ -260,10 +260,10 @@ public abstract class AbstractXServerManagerObj implements AbstractXServerManage
 				
 				try ( ResultSet rs = connection.query( "SELECT * FROM " + sql_table_xservers ) ) {
 					while ( rs.next() ) {
-						int id = rs.getInt( "ID" );
-						String servername = rs.getString( "NAME" );
-						String[] hostip = rs.getString( "ADRESS" ).split( ":" );
-						String pw = rs.getString( "PW" );
+						int id = rs.getInt( "id" );
+						String servername = rs.getString( "name" );
+						String[] hostip = rs.getString( "host" ).split( ":" );
+						String pw = rs.getString( "password" );
 						
 						if ( hostip.length < 2 ) {
 							plugin.getLogger().warning( "XServer \"" + servername
